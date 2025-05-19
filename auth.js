@@ -37,11 +37,11 @@ const verifyToken = (req, res, next) => {
 
 // Genera un token JWT 
 const generateToken = (user) => {
-  return jwt.sign(user, JWT_SECRET, { expiresIn: '1d' });
+  return jwt.sign(user, JWT_SECRET, { expiresIn: '1h' });
 };
 
 function generateRefreshToken(user) {
-  return jwt.sign(user, JWT_SECRET, { expiresIn: '1h' }); 
+  return jwt.sign(user, JWT_SECRET, { expiresIn: '1d' }); 
 }
 
 // Middleware de autenticación básica
