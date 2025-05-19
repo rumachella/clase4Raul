@@ -84,7 +84,7 @@ app.get('/refresh', verifyToken, (req, res) => {
   res.json({
     accessToken: newAccessToken,
     message: 'Nuevo Access Token(REFRESH) generado',
-    expiresIn: '1h'
+    expiresIn: '1d'
   });
 });
 

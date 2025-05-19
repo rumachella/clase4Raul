@@ -1,4 +1,0 @@
-2025-05-05T17:26:41.420Z - fabrizzio hizo 8 + 6 = 14
-2025-05-05T17:26:44.914Z - fabrizzio hizo 9 + 5 = 14
-2025-05-05T17:26:47.875Z - fabrizzio hizo 7 + 9 = 16
-2025-05-05T17:26:50.234Z - fabrizzio hizo 3 + 7 = 10
