@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const PORT = process.env.HISTORIAL_PORT;
+const db = require('./db');
 
 app.use(express.json());
 
@@ -15,14 +16,16 @@ app.post('/guardar', (req, res) => {
     return res.status(400).json({ error: 'Faltan campos' });
   }
 
-  //objeto de registro
-  const registro = {
-    user,
-    operation,
-    result,
-    timestamp
-  };
-
+  const query = `
+    INSERT INTO operaciones (usuario, operacion, resultado, fecha)
+    VALUES (?, ?, ?, ?)
+  `;
+  db.query(query, [user, operation, result, timestamp], (err, result) => {
+    if (err) {
+      console.error('Error al guardar en la base de datos:', err);
+      return res.status(500).json({ error: 'Error al guardar en la base de datos' });
+    }
+  });
   //agregamos el registro
   historial.push(registro);
 
